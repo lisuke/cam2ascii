@@ -3,6 +3,11 @@
 
 #include <QMainWindow>
 
+class QCamera;
+class QLineEdit;
+class QVideoWidget;
+class QCameraImageCapture;
+class QVideoFrame;
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +22,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    QCamera *camera;
+
+    QLineEdit *output;
+    QVideoWidget *viewer;
+    QCameraImageCapture *imageCapture;
+private slots:
+    void decode(int id, QImage image);
+    void check();
 };
 
 #endif // MAINWINDOW_H
